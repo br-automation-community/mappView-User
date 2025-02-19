@@ -6,5 +6,6 @@
     <Object Type="File">Config.mappviewcfg</Object>
     <Object Type="File">ArUser.binding</Object>
     <Object Type="File">ArUser.eventbinding</Object>
+    <Object Type="File">OpcUaServer.uaserver</Object>
   </Objects>
 </Package>
