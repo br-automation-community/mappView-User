@@ -5,9 +5,9 @@
 			<Source xsi:type="opcUa" refId="::AsGlobalPV:ArUser.PAR.FilePath" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentUser" widgetRefId="txtFilePath" attribute="value" />
 		</Binding>
-	<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:ArUser.Status" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentUser" widgetRefId="txtExportUserStatus" attribute="value" />
-</Binding>
-</Bindings>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:ArUser.Status" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentUser" widgetRefId="txtExportUserStatus" attribute="value" />
+		</Binding>
+	</Bindings>
 </BindingsSet>
