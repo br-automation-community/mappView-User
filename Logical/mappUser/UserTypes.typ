@@ -13,6 +13,7 @@ TYPE
 		IdleUser, (*Wait state*)
 		DestroyList,
 		CreateUser,
+		AssignDefaultRole,
 		DeleteUser,
 		RenameUser,
 		ExportList,
