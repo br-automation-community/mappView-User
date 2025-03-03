@@ -6,8 +6,8 @@
     <Object Type="File">Visualizat.vis</Object>
     <Object Type="File">ArUser.eventbinding</Object>
     <Object Type="File">ArUser.binding</Object>
-    <Object Type="File">RFID.eventbinding</Object>
-    <Object Type="File">RFID.binding</Object>
+    <Object Type="File" TransferedForTargetSourceCompare="true">RFID_eventbinding.eventbinding</Object>
+    <Object Type="File" TransferedForTargetSourceCompare="true">RFID.binding</Object>
     <Object Type="File">OpcUaServer.uaserver</Object>
   </Objects>
 </Package>

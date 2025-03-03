@@ -1,3 +1,6 @@
+Version 1.3
+- Better workaround for user create not assigning default role
+
 Version 1.2
 - Update project to AS6
 - Workaround for user create not assigning default role

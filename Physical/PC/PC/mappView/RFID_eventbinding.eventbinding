@@ -7,7 +7,7 @@
 			<Source contentRefId="contentUser" widgetRefId="btnUserAssignToken" xsi:type="widgets.brease.Button.Event" event="Click" />
 			<!-- Read user name />-->
 			<Operand name="txtUserNameManagment" datatype="ANY_STRING">
-				<ReadTarget xsi:type="widgets.brease.TextInput.ReadAction" contentRefId="contentUser" widgetRefId="txtUserNameManagment" >
+				<ReadTarget xsi:type="widgets.brease.TextInput.ReadAction" contentRefId="contentUser" widgetRefId="txtUserNameManagment">
 					<Method xsi:type="widgets.brease.TextInput.Action.GetValue" />
 				</ReadTarget>
 			</Operand>
@@ -16,7 +16,7 @@
 					<!-- Set user name />-->
 					<Step order="0">
 						<Action>
-							<Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:RFID.PAR.UserName" >
+							<Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:RFID.PAR.UserName">
 								<Method xsi:type="opcUa.NodeAction.SetValueString" value="=txtUserNameManagment" />
 							</Target>
 						</Action>
@@ -24,7 +24,7 @@
 					<!-- Set command />-->
 					<Step order="1">
 						<Action>
-							<Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:RFID.CMD.TokenAssign" >
+							<Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:RFID.CMD.TokenAssign">
 								<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
 							</Target>
 						</Action>
@@ -38,7 +38,7 @@
 			<Source contentRefId="contentUser" widgetRefId="btnUserRemoveToken" xsi:type="widgets.brease.Button.Event" event="Click" />
 			<!-- Read user name />-->
 			<Operand name="txtUserNameManagment" datatype="ANY_STRING">
-				<ReadTarget xsi:type="widgets.brease.TextInput.ReadAction" contentRefId="contentUser" widgetRefId="txtUserNameManagment" >
+				<ReadTarget xsi:type="widgets.brease.TextInput.ReadAction" contentRefId="contentUser" widgetRefId="txtUserNameManagment">
 					<Method xsi:type="widgets.brease.TextInput.Action.GetValue" />
 				</ReadTarget>
 			</Operand>
@@ -47,7 +47,7 @@
 					<!-- Set user name />-->
 					<Step order="0">
 						<Action>
-							<Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:RFID.PAR.UserName" >
+							<Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:RFID.PAR.UserName">
 								<Method xsi:type="opcUa.NodeAction.SetValueString" value="=txtUserNameManagment" />
 							</Target>
 						</Action>
@@ -55,7 +55,7 @@
 					<!-- Set command />-->
 					<Step order="1">
 						<Action>
-							<Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:RFID.CMD.TokenRemove" >
+							<Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:RFID.CMD.TokenRemove">
 								<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
 							</Target>
 						</Action>
@@ -71,14 +71,14 @@
 				<Sequence>
 					<Step order="0">
 						<Action>
-							<Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:RFID.CMD.ErrorReset" >
+							<Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:RFID.CMD.ErrorReset">
 								<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
 							</Target>
 						</Action>
 					</Step>
 					<Step order="1">
 						<Action>
-							<Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:RFID.CMD.ReaderEnable" >
+							<Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:RFID.CMD.ReaderEnable">
 								<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
 							</Target>
 						</Action>
@@ -114,7 +114,7 @@
 					</Step>
 					<Step order="1">
 						<Action>
-							<Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:RFID.VIS.ExecuteLogin" >
+							<Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:RFID.VIS.ExecuteLogin">
 								<Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
 							</Target>
 						</Action>
@@ -128,20 +128,20 @@
 			<Source xsi:type="opcUa.Event" refId="::AsGlobalPV:RFID.VIS.ShowMessageBoxOK" event="ValueChanged" />
 			<!-- Read value from PLC />-->	
 			<Operand name="MessageBoxText" datatype="ANY_STRING">
-				<ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::AsGlobalPV:RFID.DAT.Status" >
+				<ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::AsGlobalPV:RFID.DAT.Status">
 					<Method xsi:type="opcUa.NodeAction.GetValue" />
 				</ReadTarget>
 			</Operand>
 			
-			<EventHandler condition="newValue" >		
+			<EventHandler condition="newValue">		
 				<Action>					
 					<Target xsi:type="clientSystem.Action">
-						<Method xsi:type="clientSystem.Action.ShowMessageBox" type="OK" message="=MessageBoxText" header="Information" icon="Information"  />
+						<Method xsi:type="clientSystem.Action.ShowMessageBox" type="OK" message="=MessageBoxText" header="Information" icon="Information" />
 					</Target>
 					<Result>
 						<ResultHandler condition="result = 4">
 							<Action>					
-								<Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:RFID.VIS.ShowMessageBoxOK" >
+								<Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:RFID.VIS.ShowMessageBoxOK">
 									<Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
 								</Target>
 							</Action>
@@ -156,7 +156,7 @@
 			<Source contentRefId="contentUser" widgetRefId="btnLogoutButton" xsi:type="widgets.brease.LogoutButton.Event" event="Click" />
 			<EventHandler>
 				<Action>
-					<Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:RFID.DAT.Data" >
+					<Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:RFID.DAT.Data">
 						<Method xsi:type="opcUa.NodeAction.SetValueString" value="" />
 					</Target>
 				</Action>
