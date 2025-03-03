@@ -22,5 +22,5 @@ Recommended task class is #8 with a 10ms cycle time.
 <a name="Revision-History"></a>
 ## Revision History
 
-#### Version 2.0
-- First release with new user controls
+#### Version 2.1
+- Update to AS6
