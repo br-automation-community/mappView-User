@@ -95,7 +95,7 @@ PROGRAM _CYCLIC
 					END_IF
 				// Rename user
 				ELSIF (ArUser.CMD.UserRename) THEN
-					// Make sure we dont delete user that is logged in
+					// Make sure we dont rename user that is logged in
 					IF(brsstrcmp(ADR(ArUser.DAT.UserActive[ArUser.PAR.VisuSlotID]), ADR(ArUser.PAR.UserName)) = 0) THEN
 						ArUser.ERR.No := ERR_RENAME_CURRENT_USER;
 						ArUser.ERR.State := UserManagementState;
@@ -151,17 +151,11 @@ PROGRAM _CYCLIC
 				// --------------------------------------------------------------------------------------------------------------------	
 				// Success
 				IF ArUserCreate_0.Done AND NOT ArUserCreate_0.Busy THEN
-					// Create new user 
-					IF(ArUser.CMD.UserCreate) THEN
-						ArUserAssignRole_0(Execute := FALSE);
-						UserManagementState := AssignDefaultRole;
-						RETURN;
-						
-					// Rename existing user
-					ELSE
-						PropertyName := 'UserID';
-						UserManagementState := PropertyRead;				
-					END_IF
+					// Assign default role
+					ArUserAssignRole_0(Execute := FALSE);
+					UserManagementState := AssignDefaultRole;
+					RETURN;			
+
 				// Error
 				ELSIF ArUserCreate_0.Error THEN
 					ArUser.ERR.No := ArUserCreate_0.ErrorID;
@@ -179,19 +173,26 @@ PROGRAM _CYCLIC
 				// Success
 				IF ArUserAssignRole_0.Done AND NOT ArUserAssignRole_0.Busy THEN
 					ArUserAssignRole_0(Execute := FALSE);
-						
-					ArUser.DAT.Status := 'User ';				
-					brsstrcat(ADR(ArUser.DAT.Status), ADR(tmpUser));
-					brsstrcat(ADR(ArUser.DAT.Status), ADR(' created'));
 					
-					// Set password when it exists
-					IF ArUser.PAR.Password <> '' THEN
-						UserManagementState := ComparePassword;
+					// Create new user 
+					IF(ArUser.CMD.UserCreate) THEN
+						ArUser.DAT.Status := 'User ';				
+						brsstrcat(ADR(ArUser.DAT.Status), ADR(tmpUser));
+						brsstrcat(ADR(ArUser.DAT.Status), ADR(' created'));
+						
+						// Set password when it exists
+						IF ArUser.PAR.Password <> '' THEN
+							UserManagementState := ComparePassword;
+						ELSE
+							ArUser.PAR.UserName := '';
+							UserManagementState := CreateUserListGetFirst;
+						END_IF;										
+					// Rename existing user
 					ELSE
-						ArUser.PAR.UserName := '';
-						UserManagementState := CreateUserListGetFirst;
-					END_IF;										
-					RETURN;
+						PropertyName := 'Password';
+						UserManagementState := PropertyRead;				
+					END_IF
+					RETURN;			
 			
 				// Error
 				ELSIF ArUserAssignRole_0.Error THEN
@@ -338,13 +339,9 @@ PROGRAM _CYCLIC
 				// --------------------------------------------------------------------------------------------------------------------	
 				// Success
 				IF ArUserSetProperty_0.Done AND NOT ArUserSetProperty_0.Busy THEN
-					// Read password after user ID
-					IF PropertyName = 'UserID' THEN
-						PropertyName := 'Password';
-						ArUserGetProperty_0(Execute := FALSE);	
-						UserManagementState := PropertyRead;
-						// Assign roles after password
-					ELSIF PropertyName = 'Password' THEN
+					ArUserSetProperty_0(Execute := FALSE);	
+					// Assign roles after password
+					IF PropertyName = 'Password' THEN
 						idx := 0;
 						ArUser.PAR.UserRole := ArUser.DAT.Users[tmpUserIdx].Roles[idx];
 						UserManagementState := AssignRole;
