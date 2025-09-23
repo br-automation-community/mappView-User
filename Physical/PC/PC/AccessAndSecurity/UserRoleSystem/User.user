@@ -28,13 +28,6 @@
       <Property ID="Role[2]" Value="Service" />
       <Property ID="Role[3]" Value="Administrators" />
       <Property ID="Role[4]" Value="Everyone" />
-      <Property ID="Role[5]" Value="BR_Engineer" />
-    </Group>
-  </Element>
-  <Element ID="user" Type="User">
-    <Property ID="Password" Value="$argon2id$v=19$m=512,t=70,p=1$IH0/Msae6oR5$g1bA5C3IX97Cl2kWmuPQcXbDYIQHUVXnikvIof+NTPY" />
-    <Group ID="Roles">
-      <Property ID="Role[1]" Value="BR_Engineer" />
     </Group>
   </Element>
 </Configuration>

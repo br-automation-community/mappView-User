@@ -17,7 +17,7 @@
         <Widget xsi:type="widgets.brease.Label" id="labLoginStatus" top="13" left="349" width="241" height="87" zIndex="1" breakWord="true" multiLine="true" text="You must login with an admin user to enable user list table!" borderWidth="2px" borderStyle="solid" textColor="rgba(192, 0, 0, 1)" bold="true" />
       </Widgets>
     </Widget>
-    <Widget xsi:type="widgets.brease.UserList" id="lstUser" top="210" left="10" width="1170" height="420" zIndex="2" itemsPerPage="5" borderStyle="solid" backColor="rgba(220, 220, 220, 1)">
+    <Widget xsi:type="widgets.brease.UserList" id="lstUser" top="210" left="10" width="1170" height="420" zIndex="2" itemsPerPage="5" borderStyle="solid" backColor="rgba(220, 220, 220, 1)" permissionOperate="['Operator', 'Service']">
       <Widgets>
         <Widget xsi:type="widgets.brease.UserListItem" id="UserListName" width="170" zIndex="0" text="Name" />
         <Widget xsi:type="widgets.brease.UserListItem" id="UserListFullName" width="250" zIndex="1" columnType="FullName" text="Full Name" />
