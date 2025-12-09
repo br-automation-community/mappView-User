@@ -1,3 +1,8 @@
+09.12.2025
+- Update to latest mappView 5.24.6
+- Set default export and import name and use default user home path
+- Better error messages when path or username is empty
+
 Version 1.1
 - Dont disable enable button in RFID group
 - Added user partition for export/import
