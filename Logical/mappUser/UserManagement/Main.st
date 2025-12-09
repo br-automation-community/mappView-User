@@ -761,7 +761,11 @@ PROGRAM _CYCLIC
 				IF(ArUser.ERR.No = arUSER_ERR_ALREADY_EXISTS) THEN
 					ArUser.ERR.Text := 'ERR: User/Role already exists or is already assigned';
 				ELSIF(ArUser.ERR.No = arUSER_ERR_PARAMETER) THEN
-					ArUser.ERR.Text := 'ERR: User/Role is empty';
+					IF(ArUser.CMD.Import) OR (ArUser.CMD.Export) THEN
+						ArUser.ERR.Text := 'ERR: Invalid parameter. Make sure path is valid.';
+					ELSE
+						ArUser.ERR.Text := 'ERR: Invalid parameter. Make sure user and role is valid.';
+					END_IF
 				ELSIF(ArUser.ERR.No = arUSER_ERR_DOES_NOT_EXIST) THEN
 					ArUser.ERR.Text := 'ERR: User/Role does not exist';
 				ELSIF(ArUser.ERR.No = ERR_PASSWORD_MISMATCH) THEN
@@ -789,12 +793,11 @@ PROGRAM _CYCLIC
 					UserCounter := 1;	
 					RoleCounter := 0;	
 				
+					brsmemset(ADR(ArUser.CMD), 0, SIZEOF(ArUser.CMD));
 					brsmemset(ADR(ArUser.ERR), 0, SIZEOF(ArUser.ERR));
-					ArUser.CMD.ErrorReset := FALSE;
 					ArUser.VIS[ArUser.PAR.VisuSlotID].ShowMessageBoxError := FALSE;
 					UserManagementState := IdleUser;
 				END_IF;	
-				brsmemset(ADR(ArUser.CMD), 0, SIZEOF(ArUser.CMD));
 				RETURN;
 		END_CASE;
 	END_FOR;			
