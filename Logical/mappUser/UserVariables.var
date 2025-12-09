@@ -7,6 +7,7 @@ VAR CONSTANT
 END_VAR
 VAR
 	DEFAULT_ROLE : STRING[80] := 'Everyone'; (*Default role when user was created*)
+	FILE_DEVICE : STRING[80] := 'FileDevice';
 END_VAR
 (*Global variable structure*)
 VAR
