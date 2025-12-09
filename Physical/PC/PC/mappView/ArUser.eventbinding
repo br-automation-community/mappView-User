@@ -177,11 +177,21 @@
         </Action>
       </EventHandler>
     </EventBinding>
-    <EventBinding id="EventBinding_6" comment="Import user data button">
+    <EventBinding id="EventBinding_12" comment="Import user data button">
       <Source xsi:type="widgets.brease.Button.Event" contentRefId="contentUser" widgetRefId="btnImportUserData" event="Click" />
       <EventHandler>
         <Action>
           <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:ArUser.CMD.Import">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="EventBinding_6" comment="Reset error button">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="contentUser" widgetRefId="btnResetError" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:ArUser.CMD.ErrorReset">
             <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
           </Target>
         </Action>

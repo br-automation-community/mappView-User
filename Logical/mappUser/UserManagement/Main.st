@@ -94,7 +94,7 @@ PROGRAM _CYCLIC
 				IF ArUser.CMD.ErrorReset THEN
 				
 					brsmemset(ADR(ArUser.ERR), 0, SIZEOF(ArUser.ERR));
-					ArUser.CMD.ErrorReset := FALSE;
+					ArUser.Status := '';
 					UserManagementState := IdleUser;
 				END_IF;	
 				brsmemset(ADR(ArUser.CMD), 0, SIZEOF(ArUser.CMD));

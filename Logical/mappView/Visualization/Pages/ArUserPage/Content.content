@@ -1,14 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Content id="contentUser" height="800" width="1200" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Widgets>
     <Widget xsi:type="widgets.brease.GroupBox" id="grpExportUserdata" top="20" left="640" width="540" height="180" zIndex="0" text="Import and export user data">
       <Widgets>
-        <Widget xsi:type="widgets.brease.Label" id="labExportUsers" top="23" left="4" width="66" zIndex="0" text="Path" />
-        <Widget xsi:type="widgets.brease.TextInput" id="txtFilePath" top="23" left="49" width="461" zIndex="1" cornerRadius="3px" />
-        <Widget xsi:type="widgets.brease.Button" id="btnExportUserData" top="68" left="39" width="200" height="40" zIndex="2" text="Export User Data" cornerRadius="10px" />
-        <Widget xsi:type="widgets.brease.Button" id="btnImportUserData" top="68" left="299" width="200" height="40" zIndex="3" text="Import User Data" cornerRadius="10px" />
+        <Widget xsi:type="widgets.brease.Label" id="labExportUsers" top="13" left="4" width="66" zIndex="0" text="Path" />
+        <Widget xsi:type="widgets.brease.TextInput" id="txtFilePath" top="13" left="49" width="461" zIndex="1" cornerRadius="3px" />
+        <Widget xsi:type="widgets.brease.Button" id="btnExportUserData" top="63" left="9" width="160" height="40" zIndex="2" text="Export User Data" cornerRadius="10px" />
+        <Widget xsi:type="widgets.brease.Button" id="btnImportUserData" top="63" left="179" width="160" height="40" zIndex="3" text="Import User Data" cornerRadius="10px" />
         <Widget xsi:type="widgets.brease.Label" id="labExportUsersStatus" top="113" left="-1" width="61" zIndex="4" text="Status" />
         <Widget xsi:type="widgets.brease.TextOutput" id="txtExportUserStatus" top="113" left="49" width="461" zIndex="5" />
+        <Widget xsi:type="widgets.brease.Button" id="btnResetError" top="63" left="349" width="160" height="40" zIndex="6" text="Reset Error" cornerRadius="10px" />
       </Widgets>
     </Widget>
     <Widget xsi:type="widgets.brease.GroupBox" id="grpLogin" top="20" left="10" width="610" height="180" zIndex="1" text="Login">
