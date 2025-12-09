@@ -19,7 +19,7 @@ PROGRAM _CYCLIC
 			IdleUser:
 		
 				// --------------------------------------------------------------------------------------------------------------------
-				// Rename user
+				// Export user
 				IF (ArUser.CMD.Export) THEN
 					ArUserExport_0(Execute := FALSE);
 					UserManagementState := ExportList;
