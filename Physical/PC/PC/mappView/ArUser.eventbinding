@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <EventBindingSet id="ArUser_eventbinding" xmlns="http://www.br-automation.com/iat2014/eventbinding/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Bindings>
-    <EventBinding id="EventBinding_10" comment="Generic user error message box">
+    <EventBinding id="contentUser.OnError" comment="Generic user error message box">
       <Source xsi:type="widgets.brease.UserList.Event" contentRefId="contentUser" widgetRefId="lstUser" event="OnError" />
       <EventHandler condition="Code&lt;&gt;1">
         <Action>
@@ -35,7 +35,7 @@
         </Action>
       </EventHandler>
     </EventBinding>
-    <EventBinding id="EventBinding_8" comment="Add user error message box">
+    <EventBinding id="contentUser.OnErrorAddUser" comment="Add user error message box">
       <Source xsi:type="widgets.brease.UserList.Event" contentRefId="contentUser" widgetRefId="lstUser" event="UserAdded" />
       <EventHandler condition="Code=201">
         <Action>
@@ -52,7 +52,7 @@
         </Action>
       </EventHandler>
     </EventBinding>
-    <EventBinding id="EventBinding_1" comment="Modify existing user button">
+    <EventBinding id="contentUser.btnModify.Click" comment="Modify existing user button">
       <Source xsi:type="widgets.brease.LoginButton.Event" contentRefId="contentUser" widgetRefId="btnListModify" event="Click" />
       <EventHandler>
         <Action>
@@ -76,7 +76,7 @@
         </Action>
       </EventHandler>
     </EventBinding>
-    <EventBinding id="EventBinding_3" comment="Modify existing user with double click">
+    <EventBinding id="contentUser.UserList.ItemDoubleClick" comment="Modify existing user with double click">
       <Source xsi:type="widgets.brease.UserList.Event" contentRefId="contentUser" widgetRefId="lstUser" event="ItemDoubleClick" />
       <EventHandler>
         <Action>
@@ -100,7 +100,7 @@
         </Action>
       </EventHandler>
     </EventBinding>
-    <EventBinding id="EventBinding_9" comment="Modify user error message box">
+    <EventBinding id="contentUser.UserList.UserModified" comment="Modify user error message box">
       <Source xsi:type="widgets.brease.UserList.Event" contentRefId="contentUser" widgetRefId="lstUser" event="UserModified" />
       <EventHandler condition="Code=201">
         <Action>
@@ -117,7 +117,7 @@
         </Action>
       </EventHandler>
     </EventBinding>
-    <EventBinding id="EventBinding_2" comment="Delete existing user button">
+    <EventBinding id="contentUser.btnDelete.Click" comment="Delete existing user button">
       <Source xsi:type="widgets.brease.LoginButton.Event" contentRefId="contentUser" widgetRefId="btnListDelete" event="Click" />
       <EventHandler>
         <Action>
@@ -150,7 +150,7 @@
         </Action>
       </EventHandler>
     </EventBinding>
-    <EventBinding id="EventBinding_4" comment="Enable buttons on selection">
+    <EventBinding id="contentUser.UserList.Click" comment="Enable buttons on selection">
       <Source xsi:type="widgets.brease.UserList.Event" contentRefId="contentUser" widgetRefId="lstUser" event="Click" />
       <EventHandler>
         <Action>
@@ -167,7 +167,7 @@
         </Action>
       </EventHandler>
     </EventBinding>
-    <EventBinding id="EventBinding_5" comment="Export user data button">
+    <EventBinding id="contentUser.btnExportUserData.Click" comment="Export user data button">
       <Source xsi:type="widgets.brease.Button.Event" contentRefId="contentUser" widgetRefId="btnExportUserData" event="Click" />
       <EventHandler>
         <Action>
@@ -177,7 +177,7 @@
         </Action>
       </EventHandler>
     </EventBinding>
-    <EventBinding id="EventBinding_12" comment="Import user data button">
+    <EventBinding id="contentUser.btnImportUserData.Click" comment="Import user data button">
       <Source xsi:type="widgets.brease.Button.Event" contentRefId="contentUser" widgetRefId="btnImportUserData" event="Click" />
       <EventHandler>
         <Action>
@@ -187,7 +187,7 @@
         </Action>
       </EventHandler>
     </EventBinding>
-    <EventBinding id="EventBinding_6" comment="Reset error button">
+    <EventBinding id="contentUser.btnResetError.Click" comment="Reset error button">
       <Source xsi:type="widgets.brease.Button.Event" contentRefId="contentUser" widgetRefId="btnResetError" event="Click" />
       <EventHandler>
         <Action>
@@ -197,7 +197,7 @@
         </Action>
       </EventHandler>
     </EventBinding>
-    <EventBinding id="EventBinding_7" comment="Hide login notice and enable add button">
+    <EventBinding id="contentUser.LoginWidget.LoginSuccess" comment="Hide login notice and enable add button">
       <Source xsi:type="widgets.brease.Login.Event" contentRefId="contentUser" widgetRefId="LoginWidget" event="LoginSuccess" />
       <EventHandler>
         <Action>
@@ -214,7 +214,7 @@
         </Action>
       </EventHandler>
     </EventBinding>
-    <EventBinding id="EventBinding_11" comment="Show login notice and disable buttons">
+    <EventBinding id="contentUser.LoggedOut" comment="Show login notice and disable buttons">
       <Source xsi:type="clientSystem.Event" event="LoggedOut" />
       <EventHandler>
         <Action>
