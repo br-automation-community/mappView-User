@@ -1,3 +1,9 @@
+09.12.2025
+- Update mappServices and mappView to latest version
+- Set default export and import name and use default user home path
+- Added error reset button
+- Changed event binding IDs from generic names
+
 Version 2.0
 - Update to mapp 5.17
 - Update to AS 4.10
