@@ -13,9 +13,9 @@ The passwords for the users in this demo is the user name all lower case. Also s
 
 <a name="Requirements"></a>
 ## Requirements
-* Automation Studio 4.10
-* mappView 5.17
-* Automation Runtime D4.91
+* Automation Studio 6.3
+* mappView 6.3
+* Automation Runtime 6.x
 
 Recommended task class is #8 with a 10ms cycle time.
 
