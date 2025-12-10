@@ -14,10 +14,9 @@
     <Object Type="Package">mappServices</Object>
     <Object Type="Package">mappView</Object>
     <Object Type="Package">mappCockpit</Object>
-    <Object Type="Package">VC</Object>
   </Objects>
-  <Configuration ModuleId="PC_any">
-    <AutomationRuntime Version="6.3.0" />
+  <Configuration ModuleId="X20CP3687X">
+    <AutomationRuntime Version="6.4.2" />
     <Build GccVersion="11.3.0" />
     <DefaultTargetMemory Tasks="UserROM" />
     <Safety SafetyRelease="0.0" />
