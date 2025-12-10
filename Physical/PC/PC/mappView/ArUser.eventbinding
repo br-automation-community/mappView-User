@@ -1,239 +1,229 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <EventBindingSet id="ArUser_eventbinding" xmlns="http://www.br-automation.com/iat2014/eventbinding/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <Bindings>
-    <EventBinding id="EventBinding_10" comment="Generic user error message box">
-      <Source xsi:type="widgets.brease.UserList.Event" contentRefId="contentUser" widgetRefId="lstUser" event="OnError" />
-      <EventHandler condition="Code&lt;&gt;1">
-        <Action>
-          <Target xsi:type="clientSystem.Action">
-            <Method xsi:type="clientSystem.Action.ShowMessageBox" type="OK" message="Error user managment" header="Ups" icon="Error" />
-          </Target>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-    <EventBinding id="contentUser.btnListAdd.Click" comment="Add new user button">
-      <Source xsi:type="widgets.brease.LoginButton.Event" contentRefId="contentUser" widgetRefId="btnListAdd" event="Click" />
-      <EventHandler>
-        <Action>
-          <Target xsi:type="widgets.brease.UserList.Action" contentRefId="contentUser" widgetRefId="lstUser">
-            <Method xsi:type="widgets.brease.UserList.Action.OpenAddUserDialog" />
-          </Target>
-        </Action>
-      </EventHandler>
-      <EventHandler>
-        <Action>
-          <Target xsi:type="widgets.brease.LoginButton.Action" contentRefId="contentUser" widgetRefId="btnListModify">
-            <Method xsi:type="widgets.brease.LoginButton.Action.SetEnable" value="false" />
-          </Target>
-        </Action>
-      </EventHandler>
-      <EventHandler>
-        <Action>
-          <Target xsi:type="widgets.brease.LoginButton.Action" contentRefId="contentUser" widgetRefId="btnListDelete">
-            <Method xsi:type="widgets.brease.LoginButton.Action.SetEnable" value="false" />
-          </Target>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-    <EventBinding id="EventBinding_8" comment="Add user error message box">
-      <Source xsi:type="widgets.brease.UserList.Event" contentRefId="contentUser" widgetRefId="lstUser" event="UserAdded" />
-      <EventHandler condition="Code=201">
-        <Action>
-          <Target xsi:type="clientSystem.Action">
-            <Method xsi:type="clientSystem.Action.ShowMessageBox" type="OK" message="User already exists {Code}" header="Ups" icon="Error" />
-          </Target>
-        </Action>
-      </EventHandler>
-      <EventHandler condition="Code&lt;&gt;1 AND Code&lt;&gt;201">
-        <Action>
-          <Target xsi:type="clientSystem.Action">
-            <Method xsi:type="clientSystem.Action.ShowMessageBox" type="OK" message="Error adding user " header="Ups" icon="Error" />
-          </Target>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-    <EventBinding id="EventBinding_1" comment="Modify existing user button">
-      <Source xsi:type="widgets.brease.LoginButton.Event" contentRefId="contentUser" widgetRefId="btnListModify" event="Click" />
-      <EventHandler>
-        <Action>
-          <Target xsi:type="widgets.brease.UserList.Action" contentRefId="contentUser" widgetRefId="lstUser">
-            <Method xsi:type="widgets.brease.UserList.Action.OpenModifyUserDialog" />
-          </Target>
-        </Action>
-      </EventHandler>
-      <EventHandler>
-        <Action>
-          <Target xsi:type="widgets.brease.LoginButton.Action" contentRefId="contentUser" widgetRefId="btnListModify">
-            <Method xsi:type="widgets.brease.LoginButton.Action.SetEnable" value="false" />
-          </Target>
-        </Action>
-      </EventHandler>
-      <EventHandler>
-        <Action>
-          <Target xsi:type="widgets.brease.LoginButton.Action" contentRefId="contentUser" widgetRefId="btnListDelete">
-            <Method xsi:type="widgets.brease.LoginButton.Action.SetEnable" value="false" />
-          </Target>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-    <EventBinding id="EventBinding_3" comment="Modify existing user with double click">
-      <Source xsi:type="widgets.brease.UserList.Event" contentRefId="contentUser" widgetRefId="lstUser" event="ItemDoubleClick" />
-      <EventHandler>
-        <Action>
-          <Target xsi:type="widgets.brease.UserList.Action" contentRefId="contentUser" widgetRefId="lstUser">
-            <Method xsi:type="widgets.brease.UserList.Action.OpenModifyUserDialog" />
-          </Target>
-        </Action>
-      </EventHandler>
-      <EventHandler>
-        <Action>
-          <Target xsi:type="widgets.brease.LoginButton.Action" contentRefId="contentUser" widgetRefId="btnListModify">
-            <Method xsi:type="widgets.brease.LoginButton.Action.SetEnable" value="false" />
-          </Target>
-        </Action>
-      </EventHandler>
-      <EventHandler>
-        <Action>
-          <Target xsi:type="widgets.brease.LoginButton.Action" contentRefId="contentUser" widgetRefId="btnListDelete">
-            <Method xsi:type="widgets.brease.LoginButton.Action.SetEnable" value="false" />
-          </Target>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-    <EventBinding id="EventBinding_9" comment="Modify user error message box">
-      <Source xsi:type="widgets.brease.UserList.Event" contentRefId="contentUser" widgetRefId="lstUser" event="UserModified" />
-      <EventHandler condition="Code=201">
-        <Action>
-          <Target xsi:type="clientSystem.Action">
-            <Method xsi:type="clientSystem.Action.ShowMessageBox" type="OK" message="User already exists" header="Ups" icon="Error" />
-          </Target>
-        </Action>
-      </EventHandler>
-      <EventHandler condition="Code&lt;&gt;1 AND Code&lt;&gt;201">
-        <Action>
-          <Target xsi:type="clientSystem.Action">
-            <Method xsi:type="clientSystem.Action.ShowMessageBox" type="OK" message="Error changing user " header="Ups" icon="Error" />
-          </Target>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-    <EventBinding id="EventBinding_2" comment="Delete existing user button">
-      <Source xsi:type="widgets.brease.LoginButton.Event" contentRefId="contentUser" widgetRefId="btnListDelete" event="Click" />
-      <EventHandler>
-        <Action>
-          <Target xsi:type="clientSystem.Action">
-            <Method xsi:type="clientSystem.Action.ShowMessageBox" type="YesNo" message="Delete selected user?" header="Attention" icon="Warning" />
-          </Target>
-          <Result>
-            <ResultHandler condition="result=1">
-              <Action>
-                <Target xsi:type="widgets.brease.UserList.Action" contentRefId="contentUser" widgetRefId="lstUser">
-                  <Method xsi:type="widgets.brease.UserList.Action.DeleteUser" />
-                </Target>
-              </Action>
-            </ResultHandler>
-            <ResultHandler condition="result=1">
-              <Action>
-                <Target xsi:type="widgets.brease.LoginButton.Action" contentRefId="contentUser" widgetRefId="btnListModify">
-                  <Method xsi:type="widgets.brease.LoginButton.Action.SetEnable" value="false" />
-                </Target>
-              </Action>
-            </ResultHandler>
-            <ResultHandler condition="result=1">
-              <Action>
-                <Target xsi:type="widgets.brease.LoginButton.Action" contentRefId="contentUser" widgetRefId="btnListDelete">
-                  <Method xsi:type="widgets.brease.LoginButton.Action.SetEnable" value="false" />
-                </Target>
-              </Action>
-            </ResultHandler>
-          </Result>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-    <EventBinding id="EventBinding_4" comment="Enable buttons on selection">
-      <Source xsi:type="widgets.brease.UserList.Event" contentRefId="contentUser" widgetRefId="lstUser" event="Click" />
-      <EventHandler>
-        <Action>
-          <Target xsi:type="widgets.brease.LoginButton.Action" contentRefId="contentUser" widgetRefId="btnListModify">
-            <Method xsi:type="widgets.brease.LoginButton.Action.SetEnable" value="true" />
-          </Target>
-        </Action>
-      </EventHandler>
-      <EventHandler>
-        <Action>
-          <Target xsi:type="widgets.brease.LoginButton.Action" contentRefId="contentUser" widgetRefId="btnListDelete">
-            <Method xsi:type="widgets.brease.LoginButton.Action.SetEnable" value="true" />
-          </Target>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-    <EventBinding id="EventBinding_5" comment="Export user data button">
-      <Source xsi:type="widgets.brease.Button.Event" contentRefId="contentUser" widgetRefId="btnExportUserData" event="Click" />
-      <EventHandler>
-        <Action>
-          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:ArUser.CMD.Export">
-            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
-          </Target>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-    <EventBinding id="EventBinding_6" comment="Import user data button">
-      <Source xsi:type="widgets.brease.Button.Event" contentRefId="contentUser" widgetRefId="btnImportUserData" event="Click" />
-      <EventHandler>
-        <Action>
-          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:ArUser.CMD.Import">
-            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
-          </Target>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-    <EventBinding id="EventBinding_7" comment="Hide login notice and enable add button">
-      <Source xsi:type="widgets.brease.Login.Event" contentRefId="contentUser" widgetRefId="LoginWidget" event="LoginSuccess" />
-      <EventHandler>
-        <Action>
-          <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentUser" widgetRefId="labLoginStatus">
-            <Method xsi:type="widgets.brease.Label.Action.SetVisible" value="false" />
-          </Target>
-        </Action>
-      </EventHandler>
-      <EventHandler>
-        <Action>
-          <Target xsi:type="widgets.brease.LoginButton.Action" contentRefId="contentUser" widgetRefId="btnListAdd">
-            <Method xsi:type="widgets.brease.LoginButton.Action.SetEnable" value="true" />
-          </Target>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-    <EventBinding id="EventBinding_11" comment="Show login notice and disable buttons">
-      <Source xsi:type="clientSystem.Event" event="LoggedOut" />
-      <EventHandler>
-        <Action>
-          <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentUser" widgetRefId="labLoginStatus">
-            <Method xsi:type="widgets.brease.Label.Action.SetVisible" value="true" />
-          </Target>
-        </Action>
-      </EventHandler>
-      <EventHandler>
-        <Action>
-          <Target xsi:type="widgets.brease.LoginButton.Action" contentRefId="contentUser" widgetRefId="btnListAdd">
-            <Method xsi:type="widgets.brease.LoginButton.Action.SetEnable" value="false" />
-          </Target>
-        </Action>
-      </EventHandler>
-      <EventHandler>
-        <Action>
-          <Target xsi:type="widgets.brease.LoginButton.Action" contentRefId="contentUser" widgetRefId="btnListModify">
-            <Method xsi:type="widgets.brease.LoginButton.Action.SetEnable" value="false" />
-          </Target>
-        </Action>
-      </EventHandler>
-      <EventHandler>
-        <Action>
-          <Target xsi:type="widgets.brease.LoginButton.Action" contentRefId="contentUser" widgetRefId="btnListDelete">
-            <Method xsi:type="widgets.brease.LoginButton.Action.SetEnable" value="false" />
-          </Target>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-  </Bindings>
+	<Bindings>
+		<EventBinding id="contentUser.btnListAdd.Click" comment="Add new user button">
+			<Source xsi:type="widgets.brease.LoginButton.Event" contentRefId="contentUser" widgetRefId="btnListAdd" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="widgets.brease.UserList.Action" contentRefId="contentUser" widgetRefId="lstUser">
+						<Method xsi:type="widgets.brease.UserList.Action.OpenAddUserDialog" />
+					</Target>
+				</Action>
+			</EventHandler>
+			<EventHandler>
+				<Action>
+					<Target xsi:type="widgets.brease.LoginButton.Action" contentRefId="contentUser" widgetRefId="btnListModify">
+						<Method xsi:type="widgets.brease.LoginButton.Action.SetEnable" value="false" />
+					</Target>
+				</Action>
+			</EventHandler>
+			<EventHandler>
+				<Action>
+					<Target xsi:type="widgets.brease.LoginButton.Action" contentRefId="contentUser" widgetRefId="btnListDelete">
+						<Method xsi:type="widgets.brease.LoginButton.Action.SetEnable" value="false" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="EventBinding_8" comment="Add user error message box">
+			<Source xsi:type="widgets.brease.UserList.Event" contentRefId="contentUser" widgetRefId="lstUser" event="UserAdded" />
+			<EventHandler condition="Code=201">
+				<Action>
+					<Target xsi:type="clientSystem.Action">
+						<Method xsi:type="clientSystem.Action.ShowMessageBox" type="OK" message="User already exists {Code}" header="Ups" icon="Error" />
+					</Target>
+				</Action>
+			</EventHandler>
+			<EventHandler condition="Code&lt;&gt;1 AND Code&lt;&gt;201">
+				<Action>
+					<Target xsi:type="clientSystem.Action">
+						<Method xsi:type="clientSystem.Action.ShowMessageBox" type="OK" message="Error adding user " header="Ups" icon="Error" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="EventBinding_1" comment="Modify existing user button">
+			<Source xsi:type="widgets.brease.LoginButton.Event" contentRefId="contentUser" widgetRefId="btnListModify" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="widgets.brease.UserList.Action" contentRefId="contentUser" widgetRefId="lstUser">
+						<Method xsi:type="widgets.brease.UserList.Action.OpenModifyUserDialog" />
+					</Target>
+				</Action>
+			</EventHandler>
+			<EventHandler>
+				<Action>
+					<Target xsi:type="widgets.brease.LoginButton.Action" contentRefId="contentUser" widgetRefId="btnListModify">
+						<Method xsi:type="widgets.brease.LoginButton.Action.SetEnable" value="false" />
+					</Target>
+				</Action>
+			</EventHandler>
+			<EventHandler>
+				<Action>
+					<Target xsi:type="widgets.brease.LoginButton.Action" contentRefId="contentUser" widgetRefId="btnListDelete">
+						<Method xsi:type="widgets.brease.LoginButton.Action.SetEnable" value="false" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="EventBinding_3" comment="Modify existing user with double click">
+			<Source xsi:type="widgets.brease.UserList.Event" contentRefId="contentUser" widgetRefId="lstUser" event="ItemDoubleClick" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="widgets.brease.UserList.Action" contentRefId="contentUser" widgetRefId="lstUser">
+						<Method xsi:type="widgets.brease.UserList.Action.OpenModifyUserDialog" />
+					</Target>
+				</Action>
+			</EventHandler>
+			<EventHandler>
+				<Action>
+					<Target xsi:type="widgets.brease.LoginButton.Action" contentRefId="contentUser" widgetRefId="btnListModify">
+						<Method xsi:type="widgets.brease.LoginButton.Action.SetEnable" value="false" />
+					</Target>
+				</Action>
+			</EventHandler>
+			<EventHandler>
+				<Action>
+					<Target xsi:type="widgets.brease.LoginButton.Action" contentRefId="contentUser" widgetRefId="btnListDelete">
+						<Method xsi:type="widgets.brease.LoginButton.Action.SetEnable" value="false" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="EventBinding_9" comment="Modify user error message box">
+			<Source xsi:type="widgets.brease.UserList.Event" contentRefId="contentUser" widgetRefId="lstUser" event="UserModified" />
+			<EventHandler condition="Code=201">
+				<Action>
+					<Target xsi:type="clientSystem.Action">
+						<Method xsi:type="clientSystem.Action.ShowMessageBox" type="OK" message="User already exists" header="Ups" icon="Error" />
+					</Target>
+				</Action>
+			</EventHandler>
+			<EventHandler condition="Code&lt;&gt;1 AND Code&lt;&gt;201">
+				<Action>
+					<Target xsi:type="clientSystem.Action">
+						<Method xsi:type="clientSystem.Action.ShowMessageBox" type="OK" message="Error changing user " header="Ups" icon="Error" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="EventBinding_2" comment="Delete existing user button">
+			<Source xsi:type="widgets.brease.LoginButton.Event" contentRefId="contentUser" widgetRefId="btnListDelete" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="clientSystem.Action">
+						<Method xsi:type="clientSystem.Action.ShowMessageBox" type="YesNo" message="Delete selected user?" header="Attention" icon="Warning" />
+					</Target>
+					<Result>
+						<ResultHandler condition="result=1">
+							<Action>
+								<Target xsi:type="widgets.brease.UserList.Action" contentRefId="contentUser" widgetRefId="lstUser">
+									<Method xsi:type="widgets.brease.UserList.Action.DeleteUser" />
+								</Target>
+							</Action>
+						</ResultHandler>
+						<ResultHandler condition="result=1">
+							<Action>
+								<Target xsi:type="widgets.brease.LoginButton.Action" contentRefId="contentUser" widgetRefId="btnListModify">
+									<Method xsi:type="widgets.brease.LoginButton.Action.SetEnable" value="false" />
+								</Target>
+							</Action>
+						</ResultHandler>
+						<ResultHandler condition="result=1">
+							<Action>
+								<Target xsi:type="widgets.brease.LoginButton.Action" contentRefId="contentUser" widgetRefId="btnListDelete">
+									<Method xsi:type="widgets.brease.LoginButton.Action.SetEnable" value="false" />
+								</Target>
+							</Action>
+						</ResultHandler>
+					</Result>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="EventBinding_4" comment="Enable buttons on selection">
+			<Source xsi:type="widgets.brease.UserList.Event" contentRefId="contentUser" widgetRefId="lstUser" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="widgets.brease.LoginButton.Action" contentRefId="contentUser" widgetRefId="btnListModify">
+						<Method xsi:type="widgets.brease.LoginButton.Action.SetEnable" value="true" />
+					</Target>
+				</Action>
+			</EventHandler>
+			<EventHandler>
+				<Action>
+					<Target xsi:type="widgets.brease.LoginButton.Action" contentRefId="contentUser" widgetRefId="btnListDelete">
+						<Method xsi:type="widgets.brease.LoginButton.Action.SetEnable" value="true" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="EventBinding_5" comment="Export user data button">
+			<Source xsi:type="widgets.brease.Button.Event" contentRefId="contentUser" widgetRefId="btnExportUserData" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:ArUser.CMD.Export">
+						<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="EventBinding_6" comment="Import user data button">
+			<Source xsi:type="widgets.brease.Button.Event" contentRefId="contentUser" widgetRefId="btnImportUserData" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:ArUser.CMD.Import">
+						<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="EventBinding_7" comment="Hide login notice and enable add button">
+			<Source xsi:type="widgets.brease.Login.Event" contentRefId="contentUser" widgetRefId="LoginWidget" event="LoginSuccess" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="widgets.brease.Label.Action" contentRefId="contentUser" widgetRefId="labLoginStatus">
+						<Method xsi:type="widgets.brease.Label.Action.SetVisible" value="false" />
+					</Target>
+				</Action>
+			</EventHandler>
+			<EventHandler>
+				<Action>
+					<Target xsi:type="widgets.brease.LoginButton.Action" contentRefId="contentUser" widgetRefId="btnListAdd">
+						<Method xsi:type="widgets.brease.LoginButton.Action.SetEnable" value="true" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="EventBinding_11" comment="Show login notice and disable buttons">
+			<Source xsi:type="clientSystem.Event" event="LoggedOut" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="widgets.brease.Label.Action" contentRefId="contentUser" widgetRefId="labLoginStatus">
+						<Method xsi:type="widgets.brease.Label.Action.SetVisible" value="true" />
+					</Target>
+				</Action>
+			</EventHandler>
+			<EventHandler>
+				<Action>
+					<Target xsi:type="widgets.brease.LoginButton.Action" contentRefId="contentUser" widgetRefId="btnListAdd">
+						<Method xsi:type="widgets.brease.LoginButton.Action.SetEnable" value="false" />
+					</Target>
+				</Action>
+			</EventHandler>
+			<EventHandler>
+				<Action>
+					<Target xsi:type="widgets.brease.LoginButton.Action" contentRefId="contentUser" widgetRefId="btnListModify">
+						<Method xsi:type="widgets.brease.LoginButton.Action.SetEnable" value="false" />
+					</Target>
+				</Action>
+			</EventHandler>
+			<EventHandler>
+				<Action>
+					<Target xsi:type="widgets.brease.LoginButton.Action" contentRefId="contentUser" widgetRefId="btnListDelete">
+						<Method xsi:type="widgets.brease.LoginButton.Action.SetEnable" value="false" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+	</Bindings>
 </EventBindingSet>
