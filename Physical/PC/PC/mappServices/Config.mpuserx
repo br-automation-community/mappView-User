@@ -26,10 +26,10 @@
       <Property ID="PasswordExpirationNotification" Value="0" />
       <Property ID="PasswordHistory" Value="0" />
       <Property ID="PasswordChangeReq" Value="FALSE" />
-      <Property ID="PasswordCase" Value="TRUE" />
-      <Property ID="PasswordAlpha" Value="TRUE" />
-      <Property ID="PasswordSpecial" Value="TRUE" />
-      <Property ID="PasswordLength" Value="8" />
+      <Property ID="PasswordCase" Value="FALSE" />
+      <Property ID="PasswordAlpha" Value="FALSE" />
+      <Property ID="PasswordSpecial" Value="FALSE" />
+      <Property ID="PasswordLength" Value="3" />
     </Group>
     <Group ID="UserAccount">
       <Property ID="InvalidPasswordAttempts" Value="3" />
