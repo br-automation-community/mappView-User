@@ -2,22 +2,19 @@
 <?AutomationStudio FileVersion="4.9"?>
 <Configuration>
   <Element ID="Anonymous" Type="User">
-    <Property ID="UserID" Value="1" />
     <Group ID="Roles">
       <Property ID="Role[1]" Value="Everyone" />
     </Group>
   </Element>
   <Element ID="John" Type="User">
-    <Property ID="UserID" Value="2" />
-    <Property ID="Password" Value="BjBGh8DAssJt/jsPnTJWpFZScN9Q44TA1uk0g5joZE092ymZQr4=" Description="john" />
+    <Property ID="Password" Value="$argon2id$v=19$m=512,t=70,p=1$QFEVx+cNTC7T$1oc8+oBd0Wgyfhrf6Z61LLt4sQLuUYkvhzQEL772j2M" Description="john" />
     <Group ID="Roles">
       <Property ID="Role[1]" Value="Operator" />
       <Property ID="Role[2]" Value="Everyone" />
     </Group>
   </Element>
   <Element ID="Dave" Type="User">
-    <Property ID="UserID" Value="3" />
-    <Property ID="Password" Value="iQKkRV+kMw03UM8ogfXRHqKDRAzfJhc+wvtUPqdroe9pj+Z6oog=" Description="dave" />
+    <Property ID="Password" Value="$argon2id$v=19$m=512,t=70,p=1$0Ia/Bxd6HdS9$o2CpQvJ3iqvN11yzU6HSM0zb6Vxo9avvSu+HbyDJHNo" Description="dave" />
     <Group ID="Roles">
       <Property ID="Role[1]" Value="Operator" />
       <Property ID="Role[2]" Value="Service" />
@@ -26,13 +23,13 @@
     </Group>
   </Element>
   <Element ID="Bob" Type="User">
-    <Property ID="UserID" Value="4" />
-    <Property ID="Password" Value="dRLIDgv5PwGPr5RmXan09xLQUA6SsMPi6IGIGA3bRjBVfCpNfog=" Description="bob" />
+    <Property ID="Password" Value="$argon2id$v=19$m=512,t=70,p=1$IKITRaBt9nzb$GDGoTzMatPjok3XxS0CUMh2WA0pQ7TDWjA2HU3lWbTc" Description="bob" />
     <Group ID="Roles">
       <Property ID="Role[1]" Value="Operator" />
       <Property ID="Role[2]" Value="Service" />
       <Property ID="Role[3]" Value="Administrators" />
       <Property ID="Role[4]" Value="Everyone" />
+      <Property ID="Role[5]" Value="BR_SecurityAdmin" />
     </Group>
   </Element>
 </Configuration>

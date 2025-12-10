@@ -1,8 +1,8 @@
 (*General*)
 VAR
 	UserManagementState : userManagementEnum := IdleUser; (*State Machine for UserManagementState*)
-	ArUserExport_0 : ArUserExport; (*Export all user and role data*)
-	ArUserImport_0 : ArUserImport; (*Import all user and role data*)
+	ArUserExport_0 : ArUserExportEx; (*Export all user and role data*)
+	ArUserImport_0 : ArUserImportEx; (*Import all user and role data*)
 	override : USINT;
 END_VAR
 VAR CONSTANT

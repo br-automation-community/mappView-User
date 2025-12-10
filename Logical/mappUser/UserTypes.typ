@@ -85,7 +85,7 @@ TYPE
 		ErrorReset : BOOL;
 	END_STRUCT;
 	userPAR : 	STRUCT 
-		FilePath : STRING[100] := 'F:/UserDataExport.txt';
+		FilePath : STRING[100] := 'user.txt';
 	END_STRUCT;
 	userERR : 	STRUCT 
 		No : DINT;
