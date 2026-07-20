@@ -2,6 +2,8 @@
 /Diagnosis
 /Temp
 /Docs
+/.vscode
+/.github
 /*.set
 /*.isopen
 
