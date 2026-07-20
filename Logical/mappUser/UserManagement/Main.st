@@ -38,7 +38,7 @@ PROGRAM _CYCLIC
 			// Export user list to file
 			// --------------------------------------------------------------------------------------------------------------------					
 			ExportList:
-				ArUserExport_0(Execute := TRUE , LocalPath := ArUser.PAR.FilePath);		
+				ArUserExport_0(Execute := TRUE, Device := 'FileDevice', LocalPath := ArUser.PAR.FilePath);		
 	
 				// --------------------------------------------------------------------------------------------------------------------	
 				// Success
@@ -57,7 +57,7 @@ PROGRAM _CYCLIC
 			// Import user list from file
 			// --------------------------------------------------------------------------------------------------------------------					
 			ImportList:
-				ArUserImport_0(Execute := TRUE , LocalPath := ArUser.PAR.FilePath);		
+				ArUserImport_0(Execute := TRUE, Device := 'FileDevice', LocalPath := ArUser.PAR.FilePath);		
 	
 				// --------------------------------------------------------------------------------------------------------------------	
 				// Success

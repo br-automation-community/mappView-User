@@ -4,7 +4,7 @@
     <Widget xsi:type="widgets.brease.GroupBox" id="grpExportUserdata" top="20" left="640" width="540" height="180" zIndex="0" text="Import and export user data">
       <Widgets>
         <Widget xsi:type="widgets.brease.Label" id="labExportUsers" top="23" left="4" width="66" zIndex="0" text="Path" />
-        <Widget xsi:type="widgets.brease.TextInput" id="txtFilePath" top="23" left="49" width="461" zIndex="1" value="C:/Temp/UserDataExport.txt" cornerRadius="3px" />
+        <Widget xsi:type="widgets.brease.TextInput" id="txtFilePath" top="23" left="49" width="461" zIndex="1" value="UserDataExport.txt" cornerRadius="3px" />
         <Widget xsi:type="widgets.brease.Button" id="btnExportUserData" top="68" left="39" width="200" height="40" zIndex="2" text="Export User Data" cornerRadius="10px" />
         <Widget xsi:type="widgets.brease.Button" id="btnImportUserData" top="68" left="299" width="200" height="40" zIndex="3" text="Import User Data" cornerRadius="10px" />
         <Widget xsi:type="widgets.brease.Label" id="labExportUsersStatus" top="113" left="-1" width="61" zIndex="4" text="Status" />
