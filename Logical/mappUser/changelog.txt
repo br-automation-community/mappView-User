@@ -3,48 +3,48 @@
 - Set default export and import name and use default user home path
 - Better error messages when path or username is empty
 
-Version 1.1
+2022-04-22
 - Dont disable enable button in RFID group
 - Added user partition for export/import
 - Fixed export path not connected to ArUser.PAR.FilePath in mappView
 
-Version 1.0
+2022-04-20
 - Fixed password is not created
 
-Version 0.8
+2020-08-31
 - Update user management to version 0.8
 - Added support for RFID reader 5E9030
 
-Version 0.7
+2020-01-09
 - Clear password field when user is created, password is changed, login or logout
 - Removed user anonymous from user list
 - Increased length of status message
 
-Version 0.6
+2019-10-16
 - Added message box before deleting user
 - Changed constant to avoid conflict with other samples
 - Fixed user selection after create and rename
 - Updated mappView to 5.7.1
 - Code optimizations
 
-Version 0.5
+2019-10-15
 - Code cleanup
 
-Version 0.5
+2019-10-15
 - Multi client support
 - Changed error structure
 
-Version 0.4
+2019-10-14
 - Software structure change to work with future expansion
 - Make sure passwords match before user is created
 - Added support for RFID reader
 
-Version 0.3
+2019-10-14
 - Automatically set password when new user is created
 - Erase password field when user logs out
 - New command to rename user
 
-Version 0.2
+2019-10-14
 - Make sure last user can not be deleted
 - Make sure last user can not delete himself
 - Make sure last user can not be deleted
@@ -52,5 +52,5 @@ Version 0.2
 - Added message boxes for success and failed commands
 - Visual tweaks and bugfixes
 
-Version 0.1
+2019-10-14
 - First public release
