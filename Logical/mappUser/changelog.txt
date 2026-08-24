@@ -1,12 +1,12 @@
-Version 2.2
+2026-07-20
 - Update to AS67
 - Update file device to USER_PATH
-- Fixed export/import function block
+- Fixed export/import function calls
 
-Version 2.1
+2025-03-03
 - Update to AS6
 
-Version 2.0
+2022-04-20
 - Update to mapp 5.17
 - Update to AS 4.10
 - Update HMI to use new user widgets
