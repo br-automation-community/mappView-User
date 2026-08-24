@@ -1,3 +1,7 @@
+2026-08-24
+- Added documentation and `change_password.py` script for changing passwords in exported user data
+- Documented the required Argon2id salt length of 9 bytes
+
 2026-07-20
 - Update to AS67
 - Update file device to USER_PATH
