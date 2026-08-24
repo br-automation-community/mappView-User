@@ -1,3 +1,6 @@
+2026-08-24
+- Use a constant for the minimum RFID data length
+
 09.12.2025
 - Update to latest mappView 5.24.6
 - Set default export and import name and use default user home path
