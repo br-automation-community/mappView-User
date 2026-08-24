@@ -4,7 +4,7 @@
 - Added error reset button
 - Changed event binding IDs from generic names
 
-Version 2.0
+2022-04-20
 - Update to mapp 5.17
 - Update to AS 4.10
 - Update HMI to use new user widgets
