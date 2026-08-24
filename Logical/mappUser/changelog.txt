@@ -1,3 +1,6 @@
+2026-08-24
+- Use a constant for the minimum RFID data length
+
 2022-04-22
 - Fixed buttons enable/disable when login/logout with RFID key
 
