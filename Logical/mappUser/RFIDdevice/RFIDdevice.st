@@ -9,7 +9,7 @@ PROGRAM _INIT
 	RFID.CMD.ReaderEnable := TRUE;				// AutoScan for RFID reader and token data
 	RFID.PAR.AutoLogin := TRUE;					// Auto login user when token is detected
 	RFID.PAR.RefreshInterval := 50;				// Read data every 500ms
-	RFID.PAR.DataMinLen := 16;					// Mimimum length of RFID data, everything shorter will be ignored	
+RFID.PAR.DataMinLen := RFID_DATA_MIN_LENGTH; // Minimum length of RFID data, everything shorter will be ignored
 
 	// -----------------------------------------------------------------------------------------------------------
 	// Use mappUser sample variables when it exists
